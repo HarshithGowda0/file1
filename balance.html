@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Balance</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            width: 50%;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #000000;
+            border-radius: 5px;
+            background-color: #cab8b8;
+        }
+        input, button {
+            margin: 10px;
+            padding: 10px;
+            width: 80%;
+        }
+    </style>
+</head>
+<body>
+    <h2>Check Balance</h2>
+    
+    <div class="container">
+        <input type="text" id="account-number" placeholder="Enter Account Number">
+        <input type="text" id="account-name" placeholder="Enter Account Holder Name">
+        <button onclick="checkBalance()">Submit</button>
+        <p id="balance-info"></p>
+        <button onclick="goBack()">Back</button>
+    </div>
+    
+    <script>
+        function checkBalance() {
+            let accNumber = document.getElementById('account-number').value;
+            let accName = document.getElementById('account-name').value;
+            
+            if (accNumber === '' || accName === '') {
+                alert('Please enter account details correctly!');
+                return;
+            }
+            
+            let balance = 1; // Example balance, replace with actual balance retrieval logic
+            document.getElementById('balance-info').innerText = 'The balance is: Rs.' + balance;
+        }
+
+        function goBack() {
+            window.location.href = 'bank.html';
+        }
+    </script>
+</body>
+</html>
